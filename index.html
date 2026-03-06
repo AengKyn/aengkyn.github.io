@@ -328,13 +328,35 @@
       letter-spacing: 0.25em; text-transform: uppercase;
       color: var(--grey); margin-bottom: 1.5rem;
     }
-    .skill-list { list-style: none; }
-    .skill-list li {
-      font-family: var(--body); font-size: 1rem; color: var(--light-grey);
-      padding: 0.65rem 0; border-bottom: 1px solid #181818;
+    .icon-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+    .icon-item {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0.6rem;
+      padding: 1.2rem 0.5rem;
+      border: 1px solid #1a1a1a;
+      transition: border-color 0.2s;
+    }
+    .icon-item:hover { border-color: #444; }
+    .icon-item svg {
+      width: 24px; height: 24px;
+      color: var(--white); opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .icon-item img {
+      width: 24px; height: 24px;
+      opacity: 0.7; transition: opacity 0.2s;
+    }
+    .icon-item:hover svg, .icon-item:hover img { opacity: 1; }
+    .icon-item span {
+      font-family: var(--body); font-size: 0.62rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--grey); text-align: center;
       transition: color 0.2s;
     }
-    .skill-list li:hover { color: var(--white); }
+    .icon-item:hover span { color: var(--white); }
 
     /* ── CONTACT ── */
     #contact {
@@ -342,7 +364,7 @@
       display: grid; grid-template-columns: 45% 55%;
     }
     .contact-left {
-      padding: 6rem 3rem; border-right: 1px solid var(--border);
+      padding: 4rem 3rem; border-right: 1px solid var(--border);
       display: flex; flex-direction: column; justify-content: space-between;
     }
     .contact-availability {
@@ -350,11 +372,11 @@
       color: var(--grey); line-height: 1.9;
     }
     .contact-right {
-      padding: 6rem 3rem;
+      padding: 4rem 3rem;
       display: flex; flex-direction: column; justify-content: center;
     }
     .contact-item {
-      padding: 1.8rem 0; border-bottom: 1px solid #181818;
+      padding: 0.6rem 0; border-bottom: 1px solid #181818;
       display: flex; justify-content: space-between; align-items: center;
     }
     .contact-item:first-child { border-top: 1px solid #181818; }
@@ -466,7 +488,37 @@
       <p>Creative, detail-focused, and brand-driven — I bring over 13 years of experience in print and digital design, specialising in the swimwear and apparel industry.</p>
       <p>I thrive in collaborative environments where creativity and clarity come first. With a no-fluff, results-oriented approach, I'm passionate about delivering bold, effective design that communicates clearly and performs.</p>
       <p>I have a proven track record of building and leading high-performing creative teams, nurturing both brand integrity and individual growth. My experience spans local and global campaigns across print and digital platforms — from large-scale corporate projects to bespoke solutions for small businesses.</p>
+      <p>Beyond design, I build tools. Using Python and AI, I've developed three applications that solve real production problems — automating workflows, eliminating manual data entry, and saving hours across teams every week.</p>
     </div>
+
+    <div style="margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0;">
+
+      <div style="padding: 1.5rem 0; border-top: 1px solid #1a1a1a;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+          <div style="font-family:var(--h2); font-weight:500; font-size:1rem; text-transform:uppercase; letter-spacing:0.04em;">Auto Crop</div>
+          <div style="font-family:var(--body); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--grey); margin-top:0.2rem;">Python · PDF Tooling</div>
+        </div>
+        <p style="font-family:var(--body); font-size:0.88rem; color:var(--grey); line-height:1.75;">Automatically trims PDF artboards to a defined production height while preserving all vector data. Designed for fast, reliable preparation of artwork files for manufacturing and internal production workflows.</p>
+      </div>
+
+      <div style="padding: 1.5rem 0; border-top: 1px solid #1a1a1a;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+          <div style="font-family:var(--h2); font-weight:500; font-size:1rem; text-transform:uppercase; letter-spacing:0.04em;">Smart Forms</div>
+          <div style="font-family:var(--body); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--grey); margin-top:0.2rem;">Python · Automation</div>
+        </div>
+        <p style="font-family:var(--body); font-size:0.88rem; color:var(--grey); line-height:1.75;">An internal production automation tool that converts customer invoices into structured, production-ready order forms instantly. Removes manual data entry, reduces errors, and standardises output across all teams.</p>
+      </div>
+
+      <div style="padding: 1.5rem 0; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
+          <div style="font-family:var(--h2); font-weight:500; font-size:1rem; text-transform:uppercase; letter-spacing:0.04em;">Weather Nav</div>
+          <div style="font-family:var(--body); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--grey); margin-top:0.2rem;">Python · Maps · Weather</div>
+        </div>
+        <p style="font-family:var(--body); font-size:0.88rem; color:var(--grey); line-height:1.75;">Maps meets Weather. A navigation tool that layers live weather data over mapping to help plan routes and outdoor activities with real-time conditions in view.</p>
+      </div>
+
+    </div>
+
     <div class="about-stats">
       <div>
         <div class="stat-num">13+</div>
@@ -911,44 +963,146 @@
     <h2 class="section-heading">What<br><span class="light">I do</span></h2>
   </div>
   <div class="skills-right reveal" style="transition-delay:0.12s">
+
+    <!-- DESIGN -->
     <div>
       <p class="skill-group-title">Design</p>
-      <ul class="skill-list">
-        <li>Print &amp; Digital Design</li>
-        <li>Swimwear &amp; Packaging</li>
-        <li>Large-Scale Signage</li>
-        <li>Social Media Marketing</li>
-        <li>Creative Direction</li>
-      </ul>
+      <div class="icon-grid">
+        <div class="icon-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg>
+          <span>Print &amp; Digital</span>
+        </div>
+        <div class="icon-item">
+          <!-- Budgy Smuggler / mens swimmers icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <path d="M4 6 C4 6 5 5 7 5 C9 5 10 7 12 7 C14 7 15 5 17 5 C19 5 20 6 20 6"/>
+            <path d="M4 6 C3 9 3 12 5 14 C7 16 9 17 12 17 C15 17 17 16 19 14 C21 12 21 9 20 6"/>
+            <path d="M8 17 C8 18.5 9.5 19.5 12 19.5 C14.5 19.5 16 18.5 16 17"/>
+            <path d="M8 17 L7 13"/>
+            <path d="M16 17 L17 13"/>
+            <path d="M7 13 C8.5 14 10 14.5 12 14.5 C14 14.5 15.5 14 17 13"/>
+          </svg>
+          <span>Swimwear</span>
+        </div>
+        <div class="icon-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 5h16M4 12h16M4 19h10"/></svg>
+          <span>Signage</span>
+        </div>
+        <div class="icon-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <span>Social Media</span>
+        </div>
+        <div class="icon-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
+          <span>Art Direction</span>
+        </div>
+        <div class="icon-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <span>AI Architecture</span>
+        </div>
+      </div>
     </div>
+
+    <!-- SOFTWARE -->
     <div>
       <p class="skill-group-title">Software</p>
-      <ul class="skill-list">
-        <li>Adobe Illustrator</li>
-        <li>Photoshop</li>
-        <li>InDesign</li>
-        <li>Canva</li>
-      </ul>
+      <div class="icon-grid">
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/adobeillustrator/ffffff" alt="Illustrator" style="width:24px;height:24px;opacity:0.7;">
+          <span>Illustrator</span>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/adobephotoshop/ffffff" alt="Photoshop" style="width:24px;height:24px;opacity:0.7;">
+          <span>Photoshop</span>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/adobeindesign/ffffff" alt="InDesign" style="width:24px;height:24px;opacity:0.7;">
+          <span>InDesign</span>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/canva/ffffff" alt="Canva" style="width:24px;height:24px;opacity:0.7;">
+          <span>Canva</span>
+        </div>
+        <div class="icon-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          <span>Browzwear</span>
+        </div>
+      </div>
     </div>
+
+    <!-- TOOLS -->
     <div>
       <p class="skill-group-title">Tools &amp; Platforms</p>
-      <ul class="skill-list">
-        <li>Monday.com CRM</li>
-        <li>Shopify POS</li>
-        <li>Microsoft Suite</li>
-        <li>Slack</li>
-        <li>Wacom Tablet</li>
-      </ul>
+      <div class="icon-grid">
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/monday/ffffff" alt="Monday" style="width:24px;height:24px;opacity:0.7;">
+          <span>Monday.com</span>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/shopify/ffffff" alt="Shopify" style="width:24px;height:24px;opacity:0.7;">
+          <span>Shopify</span>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/microsoft/ffffff" alt="Microsoft" style="width:24px;height:24px;opacity:0.7;">
+          <span>Microsoft</span>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/slack/ffffff" alt="Slack" style="width:24px;height:24px;opacity:0.7;">
+          <span>Slack</span>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/wacom/ffffff" alt="Wacom" style="width:24px;height:24px;opacity:0.7;">
+          <span>Wacom</span>
+        </div>
+      </div>
     </div>
+
+    <!-- AI -->
     <div>
       <p class="skill-group-title">AI Tools</p>
-      <ul class="skill-list">
-        <li>ChatGPT</li>
-        <li>Adobe AI</li>
-        <li>Google Gemini</li>
-        <li>Pixel Studio</li>
-      </ul>
+      <div class="icon-grid">
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/openai/ffffff" alt="ChatGPT" style="width:24px;height:24px;opacity:0.7;">
+          <span>ChatGPT</span>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/adobe/ffffff" alt="Adobe AI" style="width:24px;height:24px;opacity:0.7;">
+          <span>Adobe AI</span>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/googlegemini/ffffff" alt="Gemini" style="width:24px;height:24px;opacity:0.7;">
+          <span>Gemini</span>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/anthropic/ffffff" alt="Claude" style="width:24px;height:24px;opacity:0.7;">
+          <span>Claude</span>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/xai/ffffff" alt="Grok" style="width:24px;height:24px;opacity:0.7;">
+          <span>Grok</span>
+        </div>
+      </div>
     </div>
+
+    <!-- DEVELOPMENT -->
+    <div>
+      <p class="skill-group-title">Development</p>
+      <div class="icon-grid">
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/python/ffffff" alt="Python" style="width:24px;height:24px;opacity:0.7;">
+          <span>Python</span>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/visualstudiocode/ffffff" alt="VS Code" style="width:24px;height:24px;opacity:0.7;">
+          <span>VS Code</span>
+        </div>
+        <div class="icon-item">
+          <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" style="width:24px;height:24px;opacity:0.7;">
+          <span>GitHub</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
