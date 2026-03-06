@@ -385,7 +385,7 @@
     @keyframes fadeIn { to { opacity: 1; transform: none; } }
     .reveal {
       opacity: 0; transform: translateY(18px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
     .reveal.in { opacity: 1; transform: none; }
 
@@ -1028,7 +1028,7 @@
   document.querySelectorAll('.reveal').forEach(el => {
     new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-    }, { threshold: 0.08 }).observe(el);
+    }, { threshold: 0 }).observe(el);
   });
 
   // ── Filter ──
