@@ -380,14 +380,21 @@
       transition: border-color 0.2s;
     }
     .icon-item:hover { border-color: #1a1a1a; }
+    .icon-item .icon-box {
+      width: 29px; height: 29px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
     .icon-item svg {
       width: 29px; height: 29px;
+      max-width: 29px; max-height: 29px;
       color: var(--white); opacity: 0.7;
-      transition: none;
     }
     .icon-item img {
       width: 29px; height: 29px;
-      opacity: 0.7; transition: none;
+      max-width: 29px; max-height: 29px;
+      object-fit: contain;
+      opacity: 0.7;
     }
     .icon-item span {
       font-family: var(--body); font-size: 0.62rem;
@@ -1135,7 +1142,7 @@
           <span>Monday.com</span>
         </div>
         <div class="icon-item">
-          <img src="https://cdn.simpleicons.org/shopify/ffffff" alt="Shopify" style="width:24px;height:24px;opacity:0.7;">
+          <div class="icon-box"><img src="https://cdn.simpleicons.org/shopify/ffffff" alt="Shopify" style="width:24px;height:24px;opacity:0.7;"></div>
           <span>Shopify</span>
         </div>
         <div class="icon-item">
@@ -1143,11 +1150,11 @@
           <span>Microsoft</span>
         </div>
         <div class="icon-item">
-          <img src="https://cdn.simpleicons.org/slack/ffffff" alt="Slack" style="width:24px;height:24px;opacity:0.7;">
+          <div class="icon-box"><img src="https://cdn.simpleicons.org/slack/ffffff" alt="Slack" style="width:24px;height:24px;opacity:0.7;"></div>
           <span>Slack</span>
         </div>
         <div class="icon-item">
-          <img src="https://cdn.simpleicons.org/wacom/ffffff" alt="Wacom" style="width:24px;height:24px;opacity:0.7;">
+          <div class="icon-box"><img src="https://cdn.simpleicons.org/wacom/ffffff" alt="Wacom" style="width:24px;height:24px;opacity:0.7;"></div>
           <span>Wacom</span>
         </div>
       </div>
@@ -1158,23 +1165,23 @@
       <p class="skill-group-title">AI Tools</p>
       <div class="icon-grid">
         <div class="icon-item">
-          <img src="https://cdn.simpleicons.org/openai/ffffff" alt="ChatGPT" style="width:24px;height:24px;opacity:0.7;">
+          <div class="icon-box"><img src="https://cdn.simpleicons.org/openai/ffffff" alt="ChatGPT" style="width:24px;height:24px;opacity:0.7;"></div>
           <span>ChatGPT</span>
         </div>
         <div class="icon-item">
-          <img src="https://cdn.simpleicons.org/adobe/ffffff" alt="Adobe AI" style="width:24px;height:24px;opacity:0.7;">
+          <div class="icon-box"><img src="https://cdn.simpleicons.org/adobe/ffffff" alt="Adobe AI" style="width:24px;height:24px;opacity:0.7;"></div>
           <span>Adobe AI</span>
         </div>
         <div class="icon-item">
-          <img src="https://cdn.simpleicons.org/googlegemini/ffffff" alt="Gemini" style="width:24px;height:24px;opacity:0.7;">
+          <div class="icon-box"><img src="https://cdn.simpleicons.org/googlegemini/ffffff" alt="Gemini" style="width:24px;height:24px;opacity:0.7;"></div>
           <span>Gemini</span>
         </div>
         <div class="icon-item">
-          <img src="https://cdn.simpleicons.org/anthropic/ffffff" alt="Claude" style="width:24px;height:24px;opacity:0.7;">
+          <div class="icon-box"><img src="https://cdn.simpleicons.org/anthropic/ffffff" alt="Claude" style="width:24px;height:24px;opacity:0.7;"></div>
           <span>Claude</span>
         </div>
         <div class="icon-item">
-          <img src="https://cdn.simpleicons.org/xai/ffffff" alt="Grok" style="width:24px;height:24px;opacity:0.7;">
+          <div class="icon-box"><img src="https://cdn.simpleicons.org/xai/ffffff" alt="Grok" style="width:24px;height:24px;opacity:0.7;"></div>
           <span>Grok</span>
         </div>
       </div>
@@ -1185,7 +1192,7 @@
       <p class="skill-group-title">Development</p>
       <div class="icon-grid">
         <div class="icon-item">
-          <img src="https://cdn.simpleicons.org/python/ffffff" alt="Python" style="width:24px;height:24px;opacity:0.7;">
+          <div class="icon-box"><img src="https://cdn.simpleicons.org/python/ffffff" alt="Python" style="width:24px;height:24px;opacity:0.7;"></div>
           <span>Python</span>
         </div>
         <div class="icon-item">
@@ -1193,7 +1200,7 @@
           <span>VS Code</span>
         </div>
         <div class="icon-item">
-          <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" style="width:24px;height:24px;opacity:0.7;">
+          <div class="icon-box"><img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" style="width:24px;height:24px;opacity:0.7;"></div>
           <span>GitHub</span>
         </div>
       </div>
