@@ -4,6 +4,8 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Angus Keenan — Graphic Artist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&display=swap" rel="stylesheet">
 
   <style>
     /* ── FONTS ── */
@@ -34,6 +36,7 @@
       --grey: #888;
       --light-grey: #c8c8c8;
       --border: #1a1a1a;
+      --accent: #4F7FFF;
       --h1: 'Muckley', sans-serif;
       --h2: 'Muckley', sans-serif;
       --body: 'Aptos', sans-serif;
@@ -83,7 +86,23 @@
       font-family: var(--h1); font-weight: 900;
       font-size: clamp(5rem, 9vw, 9.5rem);
       line-height: 0.88; letter-spacing: -0.01em; text-transform: uppercase;
-      opacity: 0; animation: fadeIn 0.8s ease 0.1s forwards;
+    }
+    .hero-name .word {
+      display: block; overflow: hidden;
+    }
+    .hero-name .word span {
+      display: block;
+      transform: translateX(-110%);
+      opacity: 0;
+    }
+    .hero-name .word-1 span {
+      animation: slideInWord 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+    }
+    .hero-name .word-2 span {
+      animation: slideInWord 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+    }
+    @keyframes slideInWord {
+      to { transform: translateX(0); opacity: 1; }
     }
     .hero-role {
       font-family: var(--h2); font-weight: 500;
@@ -148,8 +167,8 @@
       display: grid; grid-template-columns: 45% 55%;
       border-top: 1px solid var(--border);
     }
-    .about-left { padding: 6rem 3rem; border-right: 1px solid var(--border); }
-    .about-right { padding: 6rem 3rem; }
+    .about-left { padding: 4.5rem 3rem; border-right: 1px solid var(--border); }
+    .about-right { padding: 4.5rem 3rem; }
 
     .section-tag {
       font-family: var(--body); font-size: 0.68rem;
@@ -162,21 +181,38 @@
       line-height: 0.9; text-transform: uppercase; letter-spacing: -0.01em;
     }
     .section-heading .light { color: var(--grey); }
+    .section-heading .accent {
+      color: var(--accent);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-style: italic;
+      letter-spacing: -0.02em;
+    }
+    .accent-full {
+      font-family: 'Barlow Condensed', sans-serif !important;
+      font-weight: 800 !important;
+      font-style: italic !important;
+      color: var(--accent) !important;
+      letter-spacing: -0.02em !important;
+      line-height: 0.88 !important;
+    }
 
     .about-body { font-family: var(--body); font-size: 1rem; line-height: 1.85; color: var(--light-grey); }
     .about-body p + p { margin-top: 1.2rem; }
 
     .about-stats {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
       margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border);
     }
     .stat-num {
-      font-family: var(--h1); font-weight: 900;
-      font-size: 3.5rem; line-height: 1;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-style: italic;
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      line-height: 1; color: var(--accent);
     }
     .stat-label {
-      font-family: var(--body); font-size: 0.68rem;
-      letter-spacing: 0.2em; text-transform: uppercase;
+      font-family: var(--body); font-size: 0.65rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
       color: var(--grey); margin-top: 0.4rem;
     }
 
@@ -323,9 +359,9 @@
       border-top: 1px solid var(--border);
       display: grid; grid-template-columns: 45% 55%;
     }
-    .skills-left { padding: 6rem 3rem; border-right: 1px solid var(--border); }
+    .skills-left { padding: 4.5rem 3rem; border-right: 1px solid var(--border); }
     .skills-right {
-      padding: 6rem 3rem;
+      padding: 4.5rem 3rem;
       display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-content: start;
     }
     .skill-group-title {
@@ -394,16 +430,70 @@
     .contact-value:hover { color: var(--grey); }
     .contact-arrow { color: var(--grey); font-size: 1rem; }
 
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.2rem 0;
+      background: var(--black);
+    }
+    .marquee-track {
+      display: flex; align-items: center; gap: 2rem;
+      white-space: nowrap;
+      animation: marquee 30s linear infinite;
+      width: max-content;
+    }
+    .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
+    .marquee-track span {
+      font-family: var(--body); font-size: 0.72rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--grey);
+    }
+    .marquee-track .dot { color: #333; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
     /* ── FOOTER ── */
     footer {
-      padding: 2rem 3rem; border-top: 1px solid #181818;
+      padding: 0; border-top: 1px solid #181818;
+      overflow: hidden;
+    }
+    .footer-top {
+      padding: 2rem 3rem;
       display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid #181818;
     }
     .footer-text {
       font-family: var(--body); font-size: 0.68rem;
       letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey);
     }
     .footer-logo img { height: 28px; width: auto; opacity: 0.4; }
+    .footer-name {
+      font-family: 'Muckley', sans-serif; font-weight: 900;
+      font-size: clamp(4rem, 14.5vw, 18rem);
+      line-height: 0.82; letter-spacing: -0.03em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: var(--white);
+      padding: 2rem 3rem 1.5rem;
+      opacity: 1;
+      user-select: none;
+    }
+    .footer-name .fn-last {
+      color: var(--accent);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-style: italic;
+    }
+    .hero-name .word-2 span {
+      color: var(--accent);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-style: italic;
+    }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeIn { to { opacity: 1; transform: none; } }
@@ -457,7 +547,10 @@
 <section id="hero">
   <div class="hero-left">
     <div>
-      <h1 class="hero-name">Angus<br>Keenan</h1>
+      <h1 class="hero-name">
+        <span class="word word-1"><span>Angus</span></span>
+        <span class="word word-2"><span>Keenan</span></span>
+      </h1>
       <p class="hero-role">Design team manager<br>&amp; head creative</p>
     </div>
     <div class="hero-contact">
@@ -481,16 +574,9 @@
 
 <!-- ── ABOUT ── -->
 <section id="about">
-  <div class="about-left reveal" style="position:relative; overflow:hidden;">
-    <p class="section-tag" style="position:relative;z-index:1;">About</p>
-    <h2 class="section-heading" style="position:relative;z-index:1;">Who<br><span class="light">I am</span></h2>
-    <img src="artworks/snakes_silhouette.png" alt="" style="
-      position:absolute; top:0; left:0;
-      width:100%; height:100%;
-      object-fit:cover; object-position:center;
-      opacity:1;
-      pointer-events:none; user-select:none;
-    ">
+  <div class="about-left reveal">
+    <p class="section-tag">About</p>
+    <h2 class="section-heading accent-full">Who I am</h2>
   </div>
   <div class="about-right reveal" style="transition-delay:0.12s">
     <div class="about-body">
@@ -539,11 +625,11 @@
       </div>
       <div>
         <div class="stat-num">8+</div>
-        <div class="stat-label">Designers Hired &amp; Trained</div>
+        <div class="stat-label">Designers Trained</div>
       </div>
       <div>
-        <div class="stat-num">200</div>
-        <div class="stat-label">Designs Delivered Weekly</div>
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Designs Weekly</div>
       </div>
     </div>
   </div>
@@ -559,7 +645,7 @@
 <section id="experience" style="padding: 6rem 3rem; border-top: 1px solid var(--border);">
   <div class="reveal" style="max-width: 860px;">
     <p class="section-tag">Career</p>
-    <h2 class="section-heading" style="margin-bottom: 4rem;">Where<br><span class="light">I've worked</span></h2>
+    <h2 class="section-heading accent-full" style="margin-bottom: 4rem;">Where I've worked</h2>
 
     <!-- Job 1 -->
     <div style="display:grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 3rem 0; border-top: 1px solid var(--border);">
@@ -664,7 +750,7 @@
 <!-- ── WORK ── -->
 <section id="work">
   <div class="work-header reveal">
-    <h2 class="section-heading">Portfolio</h2>
+    <h2 class="section-heading accent-full">Portfolio</h2>
     <div class="filters">
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="prints">Prints</button>
@@ -967,16 +1053,9 @@
 
 <!-- ── SKILLS ── -->
 <section id="skills">
-  <div class="skills-left reveal" style="position:relative; overflow:hidden;">
-    <p class="section-tag" style="position:relative;z-index:1;">Expertise</p>
-    <h2 class="section-heading" style="position:relative;z-index:1;">What<br><span class="light">I do</span></h2>
-    <img src="artworks/wray_silhouette.png" alt="" style="
-      position:absolute; top:0; left:0;
-      width:100%; height:100%;
-      object-fit:cover; object-position:center;
-      opacity:1;
-      pointer-events:none; user-select:none;
-    ">
+  <div class="skills-left reveal">
+    <p class="section-tag">Expertise</p>
+    <h2 class="section-heading accent-full">What I do</h2>
   </div>
   <div class="skills-right reveal" style="transition-delay:0.12s">
 
@@ -1133,7 +1212,7 @@
   <div class="contact-left reveal">
     <div>
       <p class="section-tag">Contact</p>
-      <h2 class="section-heading">Let's<br>work<br><span class="light">together</span></h2>
+      <h2 class="section-heading accent-full">Let's work together</h2>
     </div>
     <p class="contact-availability">Based in Australia.<br>Available for freelance<br>&amp; full-time roles.</p>
   </div>
@@ -1169,11 +1248,51 @@
   </div>
 </section>
 
+<!-- ── MARQUEE ── -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>Illustrator</span><span class="dot">·</span>
+    <span>Photoshop</span><span class="dot">·</span>
+    <span>InDesign</span><span class="dot">·</span>
+    <span>Canva</span><span class="dot">·</span>
+    <span>Browzwear</span><span class="dot">·</span>
+    <span>Monday.com</span><span class="dot">·</span>
+    <span>Shopify</span><span class="dot">·</span>
+    <span>Python</span><span class="dot">·</span>
+    <span>VS Code</span><span class="dot">·</span>
+    <span>GitHub</span><span class="dot">·</span>
+    <span>ChatGPT</span><span class="dot">·</span>
+    <span>Claude</span><span class="dot">·</span>
+    <span>Gemini</span><span class="dot">·</span>
+    <span>Grok</span><span class="dot">·</span>
+    <span>Adobe AI</span><span class="dot">·</span>
+    <!-- duplicate for seamless loop -->
+    <span>Illustrator</span><span class="dot">·</span>
+    <span>Photoshop</span><span class="dot">·</span>
+    <span>InDesign</span><span class="dot">·</span>
+    <span>Canva</span><span class="dot">·</span>
+    <span>Browzwear</span><span class="dot">·</span>
+    <span>Monday.com</span><span class="dot">·</span>
+    <span>Shopify</span><span class="dot">·</span>
+    <span>Python</span><span class="dot">·</span>
+    <span>VS Code</span><span class="dot">·</span>
+    <span>GitHub</span><span class="dot">·</span>
+    <span>ChatGPT</span><span class="dot">·</span>
+    <span>Claude</span><span class="dot">·</span>
+    <span>Gemini</span><span class="dot">·</span>
+    <span>Grok</span><span class="dot">·</span>
+    <span>Adobe AI</span><span class="dot">·</span>
+  </div>
+</div>
+
 <!-- ── FOOTER ── -->
 <footer>
-  <span class="footer-text">© 2026 Angus Keenan</span>
-  <div class="footer-logo"><img src="images/logo.png" alt="AK"></div>
-  <span class="footer-text">Design Team Manager &amp; Head Creative — Budgy Smuggler</span>
+  <div class="footer-top">
+    <span class="footer-text">© 2026 Angus Keenan</span>
+    <div class="footer-logo"><img src="images/logo.png" alt="AK"></div>
+    <span class="footer-text">Design Team Manager &amp; Head Creative — Budgy Smuggler</span>
+  </div>
+  <div class="footer-name accent-full">Angus Keenan</div>
 </footer>
 
 <!-- ── LIGHTBOX ── -->
@@ -1275,4 +1394,35 @@
     });
   });
 
-  document.getElementById('lb-close').addEventListener('click', closeLightbox
+  document.getElementById('lb-close').addEventListener('click', closeLightbox);
+  document.getElementById('lb-prev').addEventListener('click', () => {
+    const visible = getVisible();
+    currentIndex = (currentIndex - 1 + visible.length) % visible.length;
+    openLightbox(currentIndex);
+  });
+  document.getElementById('lb-next').addEventListener('click', () => {
+    const visible = getVisible();
+    currentIndex = (currentIndex + 1) % visible.length;
+    openLightbox(currentIndex);
+  });
+
+  // ── Stat collage animation ──
+  const statsEl = document.querySelector('.about-stats');
+  const focusClasses = ['focus-revenue', 'focus-years', 'focus-designs', 'focus-designers'];
+  let focusIndex = 0;
+
+  function cycleStat() {
+    statsEl.classList.remove(...focusClasses);
+    statsEl.classList.add(focusClasses[focusIndex]);
+    focusIndex = (focusIndex + 1) % focusClasses.length;
+  }
+
+  // Start after a short delay, cycle every 2.5s
+  setTimeout(() => {
+    cycleStat();
+    setInterval(cycleStat, 2500);
+  }, 1000);
+
+</script>
+</body>
+</html>
