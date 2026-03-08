@@ -69,9 +69,9 @@
       font-family: var(--body); font-size: 0.82rem;
       letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--white); text-decoration: none;
-      opacity: 0.5; transition: opacity 0.2s;
+      opacity: 0.5; transition: opacity 0.2s, color 0.2s;
     }
-    .nav-links a:hover { opacity: 1; }
+    .nav-links a:hover { opacity: 1; color: var(--accent); }
 
     /* ── HERO ── */
     #hero {
@@ -237,11 +237,10 @@
 
     /* Category label rows */
     .cat-label-row {
-      column-span: all;
+      grid-column: 1 / -1;
       padding: 1.5rem 0 0.8rem;
       border-top: 1px solid var(--border);
       display: flex; align-items: center; gap: 1.5rem;
-      break-inside: avoid;
     }
     .cat-label-row:first-child { border-top: none; }
     .cat-label-text {
@@ -253,17 +252,17 @@
 
     /* Grid */
     .gallery-grid {
-      columns: 4;
-      column-gap: 8px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
     }
     .gallery-item {
       position: relative; overflow: hidden;
       cursor: pointer; background: #111;
-      margin-bottom: 8px;
-      break-inside: avoid;
+      aspect-ratio: 1 / 1;
     }
     .gallery-item img {
-      width: 100%; height: auto; display: block;
+      width: 100%; height: 100%; object-fit: cover; display: block;
       transition: transform 0.4s ease, filter 0.3s;
       filter: grayscale(15%);
     }
@@ -382,12 +381,12 @@
     }
     .icon-item:hover { border-color: #1a1a1a; }
     .icon-item svg {
-      width: 24px; height: 24px;
+      width: 29px; height: 29px;
       color: var(--white); opacity: 0.7;
       transition: none;
     }
     .icon-item img {
-      width: 24px; height: 24px;
+      width: 29px; height: 29px;
       opacity: 0.7; transition: none;
     }
     .icon-item span {
@@ -435,22 +434,24 @@
       overflow: hidden;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 1.2rem 0;
+      padding: 1.6rem 0;
       background: var(--black);
     }
     .marquee-track {
-      display: flex; align-items: center; gap: 2rem;
+      display: flex; align-items: center; gap: 4rem;
       white-space: nowrap;
-      animation: marquee 30s linear infinite;
+      animation: marquee 35s linear infinite;
       width: max-content;
     }
     .marquee-wrap:hover .marquee-track { animation-play-state: paused; }
-    .marquee-track span {
-      font-family: var(--body); font-size: 0.72rem;
-      letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--grey);
+    .marquee-track img {
+      height: 28px; width: auto;
+      opacity: 0.45;
+      filter: brightness(0) invert(1);
+      transition: opacity 0.2s;
+      flex-shrink: 0;
     }
-    .marquee-track .dot { color: #333; }
+    .marquee-track img:hover { opacity: 0.9; }
     @keyframes marquee {
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
@@ -505,7 +506,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .gallery-grid { columns: 3; }
+      .gallery-grid { grid-template-columns: repeat(4, 1fr); }
     }
     @media (max-width: 768px) {
       nav { padding: 1.2rem 1.5rem; }
@@ -521,7 +522,7 @@
       .skills-right { grid-template-columns: 1fr 1fr; }
       #work { padding: 3.5rem 1.5rem; }
       .work-header { flex-direction: column; align-items: flex-start; gap: 2rem; }
-      .gallery-grid { columns: 2; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
       .lb-nav { display: none; }
       .section-break { padding: 1.5rem; }
     }
@@ -1251,37 +1252,37 @@
 <!-- ── MARQUEE ── -->
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <span>Illustrator</span><span class="dot">·</span>
-    <span>Photoshop</span><span class="dot">·</span>
-    <span>InDesign</span><span class="dot">·</span>
-    <span>Canva</span><span class="dot">·</span>
-    <span>Browzwear</span><span class="dot">·</span>
-    <span>Monday.com</span><span class="dot">·</span>
-    <span>Shopify</span><span class="dot">·</span>
-    <span>Python</span><span class="dot">·</span>
-    <span>VS Code</span><span class="dot">·</span>
-    <span>GitHub</span><span class="dot">·</span>
-    <span>ChatGPT</span><span class="dot">·</span>
-    <span>Claude</span><span class="dot">·</span>
-    <span>Gemini</span><span class="dot">·</span>
-    <span>Grok</span><span class="dot">·</span>
-    <span>Adobe AI</span><span class="dot">·</span>
+    <img src="https://cdn.simpleicons.org/adobe/ffffff" alt="Adobe">
+    <img src="https://cdn.simpleicons.org/adobeillustrator/ffffff" alt="Illustrator">
+    <img src="https://cdn.simpleicons.org/adobephotoshop/ffffff" alt="Photoshop">
+    <img src="https://cdn.simpleicons.org/adobeindesign/ffffff" alt="InDesign">
+    <img src="https://cdn.simpleicons.org/canva/ffffff" alt="Canva">
+    <img src="https://cdn.simpleicons.org/shopify/ffffff" alt="Shopify">
+    <img src="https://cdn.simpleicons.org/monday/ffffff" alt="Monday">
+    <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub">
+    <img src="https://cdn.simpleicons.org/python/ffffff" alt="Python">
+    <img src="https://cdn.simpleicons.org/openai/ffffff" alt="ChatGPT">
+    <img src="https://cdn.simpleicons.org/anthropic/ffffff" alt="Claude">
+    <img src="https://cdn.simpleicons.org/googlegemini/ffffff" alt="Gemini">
+    <img src="https://cdn.simpleicons.org/xai/ffffff" alt="Grok">
+    <img src="https://cdn.simpleicons.org/slack/ffffff" alt="Slack">
+    <img src="https://cdn.simpleicons.org/visualstudiocode/ffffff" alt="VS Code">
     <!-- duplicate for seamless loop -->
-    <span>Illustrator</span><span class="dot">·</span>
-    <span>Photoshop</span><span class="dot">·</span>
-    <span>InDesign</span><span class="dot">·</span>
-    <span>Canva</span><span class="dot">·</span>
-    <span>Browzwear</span><span class="dot">·</span>
-    <span>Monday.com</span><span class="dot">·</span>
-    <span>Shopify</span><span class="dot">·</span>
-    <span>Python</span><span class="dot">·</span>
-    <span>VS Code</span><span class="dot">·</span>
-    <span>GitHub</span><span class="dot">·</span>
-    <span>ChatGPT</span><span class="dot">·</span>
-    <span>Claude</span><span class="dot">·</span>
-    <span>Gemini</span><span class="dot">·</span>
-    <span>Grok</span><span class="dot">·</span>
-    <span>Adobe AI</span><span class="dot">·</span>
+    <img src="https://cdn.simpleicons.org/adobe/ffffff" alt="Adobe">
+    <img src="https://cdn.simpleicons.org/adobeillustrator/ffffff" alt="Illustrator">
+    <img src="https://cdn.simpleicons.org/adobephotoshop/ffffff" alt="Photoshop">
+    <img src="https://cdn.simpleicons.org/adobeindesign/ffffff" alt="InDesign">
+    <img src="https://cdn.simpleicons.org/canva/ffffff" alt="Canva">
+    <img src="https://cdn.simpleicons.org/shopify/ffffff" alt="Shopify">
+    <img src="https://cdn.simpleicons.org/monday/ffffff" alt="Monday">
+    <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub">
+    <img src="https://cdn.simpleicons.org/python/ffffff" alt="Python">
+    <img src="https://cdn.simpleicons.org/openai/ffffff" alt="ChatGPT">
+    <img src="https://cdn.simpleicons.org/anthropic/ffffff" alt="Claude">
+    <img src="https://cdn.simpleicons.org/googlegemini/ffffff" alt="Gemini">
+    <img src="https://cdn.simpleicons.org/xai/ffffff" alt="Grok">
+    <img src="https://cdn.simpleicons.org/slack/ffffff" alt="Slack">
+    <img src="https://cdn.simpleicons.org/visualstudiocode/ffffff" alt="VS Code">
   </div>
 </div>
 
