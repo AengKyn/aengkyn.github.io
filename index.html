@@ -201,7 +201,7 @@
     .about-body p + p { margin-top: 1.2rem; }
 
     .about-stats {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem;
       margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border);
     }
     .stat-num {
@@ -441,6 +441,19 @@
       letter-spacing: 0.02em;
     }
 
+    .portfolio-link {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-style: italic;
+      font-size: 1.1rem; letter-spacing: 0.05em;
+      color: var(--accent); text-decoration: none;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 2px;
+      transition: opacity 0.2s;
+    }
+    .portfolio-link:hover { opacity: 0.7; }
+
     /* ── CONTACT ── */
     #contact {
       border-top: 1px solid var(--border);
@@ -586,6 +599,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#tools">Tools</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#brands">Brands</a></li>
@@ -636,34 +650,6 @@
       <p>Beyond design, I build tools. Using Python and AI, I've developed three applications that solve real production problems — automating workflows, eliminating manual data entry, and saving hours across teams every week.</p>
     </div>
 
-    <div style="margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0;">
-
-      <div style="padding: 1.5rem 0; border-top: 1px solid #1a1a1a;">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-          <div style="font-family:var(--h2); font-weight:500; font-size:1rem; text-transform:uppercase; letter-spacing:0.04em;">Auto Crop</div>
-          <div style="font-family:var(--body); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--grey); margin-top:0.2rem;">Python · PDF Tooling</div>
-        </div>
-        <p style="font-family:var(--body); font-size:0.88rem; color:var(--grey); line-height:1.75;">Automatically trims PDF artboards to a defined production height while preserving all vector data. Designed for fast, reliable preparation of artwork files for manufacturing and internal production workflows.</p>
-      </div>
-
-      <div style="padding: 1.5rem 0; border-top: 1px solid #1a1a1a;">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-          <div style="font-family:var(--h2); font-weight:500; font-size:1rem; text-transform:uppercase; letter-spacing:0.04em;">Smart Forms</div>
-          <div style="font-family:var(--body); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--grey); margin-top:0.2rem;">Python · Automation</div>
-        </div>
-        <p style="font-family:var(--body); font-size:0.88rem; color:var(--grey); line-height:1.75;">An internal production automation tool that converts customer invoices into structured, production-ready order forms instantly. Removes manual data entry, reduces errors, and standardises output across all teams.</p>
-      </div>
-
-      <div style="padding: 1.5rem 0; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a;">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.5rem;">
-          <div style="font-family:var(--h2); font-weight:500; font-size:1rem; text-transform:uppercase; letter-spacing:0.04em;">Weather Nav</div>
-          <div style="font-family:var(--body); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--grey); margin-top:0.2rem;">Python · Maps · Weather</div>
-        </div>
-        <p style="font-family:var(--body); font-size:0.88rem; color:var(--grey); line-height:1.75;">Maps meets Weather. A navigation tool that layers live weather data over mapping to help plan routes and outdoor activities with real-time conditions in view.</p>
-      </div>
-
-    </div>
-
     <div class="about-stats">
       <div>
         <div class="stat-num">13+</div>
@@ -674,13 +660,62 @@
         <div class="stat-label">Revenue Scaled</div>
       </div>
       <div>
+        <div class="stat-num">11yrs</div>
+        <div class="stat-label">At Budgy Smuggler</div>
+      </div>
+      <div>
         <div class="stat-num">8+</div>
         <div class="stat-label">Designers Trained</div>
       </div>
       <div>
-        <div class="stat-num">200+</div>
-        <div class="stat-label">Designs Weekly</div>
+        <div class="stat-num">$1.1M</div>
+        <div class="stat-label">DIY Platform Revenue</div>
       </div>
+      <div>
+        <div class="stat-num">4yrs</div>
+        <div class="stat-label">Top Seller, 3 Designs Running</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECTION BREAK: TOOLS ── -->
+<div class="section-break">
+  <span class="section-break-label">Tools I've Built</span>
+  <div class="section-break-line"></div>
+</div>
+
+<!-- ── TOOLS ── -->
+<section id="tools" style="padding: 5rem 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; border-bottom: 1px solid var(--border);">
+  <div class="reveal">
+    <p class="section-tag">Built with Python & AI</p>
+    <h2 class="section-heading accent-full">I Don't Just<br>Design It —<br>I Build It.</h2>
+    <p style="font-family:var(--body); font-size:0.95rem; color:var(--grey); line-height:1.8; margin-top:1.5rem; max-width: 38ch;">Beyond design, I build tools. Using Python and AI, I've developed three applications that solve real production problems — automating workflows, eliminating manual data entry, and saving hours across teams every week.</p>
+  </div>
+
+  <div class="reveal" style="display:flex; flex-direction:column; gap:0; transition-delay:0.12s;">
+    <div style="padding: 2rem 0; border-top: 1px solid var(--border);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div style="font-family:'Barlow Condensed', sans-serif; font-weight:800; font-style:italic; font-size:1.4rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--white);">Auto Crop</div>
+        <div style="font-family:var(--body); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); border: 1px solid var(--accent); padding: 0.25rem 0.6rem;">Python · PDF Tooling</div>
+      </div>
+      <p style="font-family:var(--body); font-size:0.88rem; color:var(--grey); line-height:1.8;">Automatically trims PDF artboards to a defined production height while preserving all vector data. Built for fast, reliable preparation of artwork files for manufacturing and internal production workflows.</p>
+    </div>
+
+    <div style="padding: 2rem 0; border-top: 1px solid var(--border);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div style="font-family:'Barlow Condensed', sans-serif; font-weight:800; font-style:italic; font-size:1.4rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--white);">Smart Forms</div>
+        <div style="font-family:var(--body); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); border: 1px solid var(--accent); padding: 0.25rem 0.6rem;">Python · Automation</div>
+      </div>
+      <p style="font-family:var(--body); font-size:0.88rem; color:var(--grey); line-height:1.8;">Converts customer invoices into structured, production-ready order forms instantly. Removes manual data entry, reduces errors, and standardises output across all teams.</p>
+    </div>
+
+    <div style="padding: 2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div style="font-family:'Barlow Condensed', sans-serif; font-weight:800; font-style:italic; font-size:1.4rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--white);">Weather Nav</div>
+        <div style="font-family:var(--body); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); border: 1px solid var(--accent); padding: 0.25rem 0.6rem;">Python · Maps · Weather</div>
+      </div>
+      <p style="font-family:var(--body); font-size:0.88rem; color:var(--grey); line-height:1.8;">Maps meets Weather. A navigation tool that layers live weather data over mapping to help plan routes and outdoor activities with real-time conditions in view.</p>
     </div>
   </div>
 </section>
@@ -1263,6 +1298,7 @@
       <h2 class="section-heading accent-full">Let's work together</h2>
     </div>
     <p class="contact-availability">Based in Australia.<br>Available for AI &amp; Website Theme Freelance.<br>&amp; Full time wine tastings.</p>
+    <a href="portfolio.html" class="portfolio-link">View Full Portfolio →</a>
   </div>
   <div class="contact-right reveal" style="transition-delay:0.12s">
     <div class="contact-item">
