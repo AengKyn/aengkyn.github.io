@@ -3,7 +3,26 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Angus Keenan — Graphic Artist</title>
+  <title>Angus Keenan — Graphic Artist & Design Team Manager</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Angus Keenan — Graphic Artist and Design Team Manager with 13+ years experience in print, digital, and swimwear design. Head Creative at Budgy Smuggler. Available for AI and website theme freelance.">
+  <meta name="keywords" content="Angus Keenan, graphic designer, design team manager, Budgy Smuggler, swimwear design, print design, Sydney, freelance designer, AI design, portfolio">
+  <meta name="author" content="Angus Keenan">
+  <link rel="canonical" href="https://aengkyn.github.io/">
+
+  <!-- Open Graph (for sharing on LinkedIn, Facebook etc) -->
+  <meta property="og:title" content="Angus Keenan — Graphic Artist & Design Team Manager">
+  <meta property="og:description" content="13+ years in print and digital design. Head Creative at Budgy Smuggler. Available for AI and website theme freelance.">
+  <meta property="og:url" content="https://aengkyn.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://aengkyn.github.io/images/photo.jpg">
+
+  <!-- Twitter/X card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Angus Keenan — Graphic Artist & Design Team Manager">
+  <meta name="twitter:description" content="13+ years in print and digital design. Head Creative at Budgy Smuggler.">
+  <meta name="twitter:image" content="https://aengkyn.github.io/images/photo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&display=swap" rel="stylesheet">
 
@@ -57,8 +76,14 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
       padding: 1.4rem 3rem;
       display: flex; justify-content: space-between; align-items: center;
-      background: rgba(0,0,0,0.9);
-      backdrop-filter: blur(12px);
+      background: rgba(0,0,0,0);
+      backdrop-filter: blur(0px);
+      border-bottom: 1px solid transparent;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+    }
+    nav.scrolled {
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
     .nav-logo img {
@@ -647,7 +672,7 @@
       <p>Creative, detail-focused, and brand-driven — I bring over 13 years of experience in print and digital design, specialising in the swimwear and apparel industry.</p>
       <p>I thrive in collaborative environments where creativity and clarity come first. With a no-fluff, results-oriented approach, I'm passionate about delivering bold, effective design that communicates clearly and performs.</p>
       <p>I have a proven track record of building and leading high-performing creative teams, nurturing both brand integrity and individual growth. My experience spans local and global campaigns across print and digital platforms — from large-scale corporate projects to bespoke solutions for small businesses.</p>
-      <p>Beyond design, I build tools. Using Python and AI, I've developed three applications that solve real production problems — automating workflows, eliminating manual data entry, and saving hours across teams every week.</p>
+      
     </div>
 
     <div class="about-stats">
@@ -690,11 +715,11 @@
   <div class="reveal">
     <p class="section-tag">Built with Python & AI</p>
     <h2 class="section-heading accent-full">I Don't Just<br>Design It —<br>I Build It.</h2>
-    <p style="font-family:var(--body); font-size:0.95rem; color:var(--grey); line-height:1.8; margin-top:1.5rem; max-width: 38ch;">Beyond design, I build tools. Using Python and AI, I've developed three applications that solve real production problems — automating workflows, eliminating manual data entry, and saving hours across teams every week.</p>
+    <p style="font-family:var(--body); font-size:0.95rem; color:var(--grey); line-height:1.8; margin-top:1.5rem; max-width: 38ch;">Python tools, mobile apps, and games. If there's a problem to solve or an idea worth building, I'll find a way to build it.</p>
   </div>
 
-  <div class="reveal" style="display:flex; flex-direction:column; gap:0; transition-delay:0.12s;">
-    <div style="padding: 2rem 0; border-top: 1px solid var(--border);">
+  <div class="reveal" style="display:grid; grid-template-columns:1fr 1fr; gap:0; transition-delay:0.12s;">
+    <div style="padding: 2rem 1.5rem; border: 1px solid var(--border); margin-bottom: -1px; margin-right: -1px;">
       <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
         <div style="font-family:'Barlow Condensed', sans-serif; font-weight:800; font-style:italic; font-size:1.4rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--white);">Auto Crop</div>
         <div style="font-family:var(--body); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); border: 1px solid var(--accent); padding: 0.25rem 0.6rem;">Python · PDF Tooling</div>
@@ -702,7 +727,7 @@
       <p style="font-family:var(--body); font-size:0.88rem; color:var(--grey); line-height:1.8;">Automatically trims PDF artboards to a defined production height while preserving all vector data. Built for fast, reliable preparation of artwork files for manufacturing and internal production workflows.</p>
     </div>
 
-    <div style="padding: 2rem 0; border-top: 1px solid var(--border);">
+    <div style="padding: 2rem 1.5rem; border: 1px solid var(--border); margin-bottom: -1px; margin-right: -1px;">
       <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
         <div style="font-family:'Barlow Condensed', sans-serif; font-weight:800; font-style:italic; font-size:1.4rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--white);">Smart Forms</div>
         <div style="font-family:var(--body); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); border: 1px solid var(--accent); padding: 0.25rem 0.6rem;">Python · Automation</div>
@@ -710,12 +735,28 @@
       <p style="font-family:var(--body); font-size:0.88rem; color:var(--grey); line-height:1.8;">Converts customer invoices into structured, production-ready order forms instantly. Removes manual data entry, reduces errors, and standardises output across all teams.</p>
     </div>
 
-    <div style="padding: 2rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div style="padding: 2rem 1.5rem; border: 1px solid var(--border); margin-bottom: -1px; margin-right: -1px;">
       <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
         <div style="font-family:'Barlow Condensed', sans-serif; font-weight:800; font-style:italic; font-size:1.4rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--white);">Weather Nav</div>
         <div style="font-family:var(--body); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); border: 1px solid var(--accent); padding: 0.25rem 0.6rem;">Python · Maps · Weather</div>
       </div>
       <p style="font-family:var(--body); font-size:0.88rem; color:var(--grey); line-height:1.8;">Maps meets Weather. A navigation tool that layers live weather data over mapping to help plan routes and outdoor activities with real-time conditions in view.</p>
+    </div>
+
+    <div style="padding: 2rem 1.5rem; border: 1px solid var(--border); margin-bottom: -1px; margin-right: -1px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div style="font-family:'Barlow Condensed', sans-serif; font-weight:800; font-style:italic; font-size:1.4rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--white);">Wine Companion</div>
+        <div style="font-family:var(--body); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); border: 1px solid var(--accent); padding: 0.25rem 0.6rem;">React · Mobile App</div>
+      </div>
+      <p style="font-family:var(--body); font-size:0.88rem; color:var(--grey); line-height:1.8;">A personal wine companion app for logging tastings, rating bottles, and building a digital cellar. Designed around the experience of discovering and remembering great wine.</p>
+    </div>
+
+    <div style="padding: 2rem 1.5rem; border: 1px solid var(--border); margin-bottom: -1px; margin-right: -1px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div style="font-family:'Barlow Condensed', sans-serif; font-weight:800; font-style:italic; font-size:1.4rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--white);">Cosmos Idle</div>
+        <div style="font-family:var(--body); font-size:0.62rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); border: 1px solid var(--accent); padding: 0.25rem 0.6rem;">React · Mobile Game</div>
+      </div>
+      <p style="font-family:var(--body); font-size:0.88rem; color:var(--grey); line-height:1.8;">A mobile idle clicker built in React — 8 cosmic lifecycle stages, animated planets, 9 buildings, 14 upgrades, 15 achievements, combo system, and a prestige mechanic. Built for fun, finished for real.</p>
     </div>
   </div>
 </section>
@@ -840,7 +881,7 @@
       <button class="filter-btn active" data-filter="all">All</button>
       <button class="filter-btn" data-filter="prints">Prints</button>
       <button class="filter-btn" data-filter="logos">Logos</button>
-      <button class="filter-btn" data-filter="teamlogos">Team Logos</button>
+      <button class="filter-btn" data-filter="sportlogos">Sports Logos</button>
       <button class="filter-btn" data-filter="illustrations">Illustrations</button>
     </div>
   </div>
@@ -860,71 +901,71 @@
       <div class="cat-label-line"></div>
     </div>
 
-    <div class="gallery-item" data-cat="prints" data-title="Ferns With Benefits" data-src="artworks/ferns_with_benefits.png">
-      <img src="artworks/ferns_with_benefits.png" alt="Ferns With Benefits">
+    <div class="gallery-item" data-cat="prints" data-title="Ferns With Benefits" data-src="artworks/print_1.png">
+      <img src="artworks/print_1.png" alt="Ferns With Benefits">
       <div class="item-overlay">
         <span class="item-title">Ferns With Benefits</span>
         <span class="item-cat">Prints · 2015</span>
       </div>
     </div>
-    <div class="gallery-item" data-cat="prints" data-title="Snakes and Ladders" data-src="artworks/snakes_and_ladders.png">
-      <img src="artworks/snakes_and_ladders.png" alt="Snakes and Ladders">
+    <div class="gallery-item" data-cat="prints" data-title="Snakes and Ladders" data-src="artworks/print_2.png">
+      <img src="artworks/print_2.png" alt="Snakes and Ladders">
       <div class="item-overlay">
         <span class="item-title">Snakes and Ladders</span>
         <span class="item-cat">Prints · 2018</span>
       </div>
     </div>
-    <div class="gallery-item" data-cat="prints" data-title="Pink Pineapples" data-src="artworks/pink_pineapples.png">
-      <img src="artworks/pink_pineapples.png" alt="Pink Pineapples">
+    <div class="gallery-item" data-cat="prints" data-title="Pink Pineapples" data-src="artworks/print_3.png">
+      <img src="artworks/print_3.png" alt="Pink Pineapples">
       <div class="item-overlay">
         <span class="item-title">Pink Pineapples</span>
         <span class="item-cat">Prints · 2019</span>
       </div>
     </div>
-    <div class="gallery-item" data-cat="prints" data-title="Tropic Thunder" data-src="artworks/tropic_thunder.png">
-      <img src="artworks/tropic_thunder.png" alt="Tropic Thunder">
+    <div class="gallery-item" data-cat="prints" data-title="Tropic Thunder" data-src="artworks/print_4.png">
+      <img src="artworks/print_4.png" alt="Tropic Thunder">
       <div class="item-overlay">
         <span class="item-title">Tropic Thunder</span>
         <span class="item-cat">Prints · 2017</span>
       </div>
     </div>
-    <div class="gallery-item" data-cat="prints" data-title="Baby Sharkas" data-src="artworks/sharkas.png">
-      <img src="artworks/sharkas.png" alt="Baby Sharkas">
+    <div class="gallery-item" data-cat="prints" data-title="Baby Sharkas" data-src="artworks/print_5.png">
+      <img src="artworks/print_5.png" alt="Baby Sharkas">
       <div class="item-overlay">
         <span class="item-title">Baby Sharkas</span>
         <span class="item-cat">Prints</span>
       </div>
     </div>
-    <div class="gallery-item" data-cat="prints" data-title="Rubber Ducks" data-src="artworks/rubber_ducks.jpg">
-      <img src="artworks/rubber_ducks.jpg" alt="Rubber Ducks">
+    <div class="gallery-item" data-cat="prints" data-title="Rubber Ducks" data-src="artworks/print_6.jpg">
+      <img src="artworks/print_6.jpg" alt="Rubber Ducks">
       <div class="item-overlay">
         <span class="item-title">Rubber Ducks</span>
         <span class="item-cat">Prints</span>
       </div>
     </div>
-    <div class="gallery-item" data-cat="prints" data-title="Bacon and Eggs" data-src="artworks/bacon_and_eggs.jpg">
-      <img src="artworks/bacon_and_eggs.jpg" alt="Bacon and Eggs">
+    <div class="gallery-item" data-cat="prints" data-title="Bacon and Eggs" data-src="artworks/print_7.jpg">
+      <img src="artworks/print_7.jpg" alt="Bacon and Eggs">
       <div class="item-overlay">
         <span class="item-title">Bacon and Eggs</span>
         <span class="item-cat">Prints</span>
       </div>
     </div>
-    <div class="gallery-item" data-cat="prints" data-title="Berry Nice Indeed" data-src="artworks/berry_nice_indeed.jpg">
-      <img src="artworks/berry_nice_indeed.jpg" alt="Berry Nice Indeed">
+    <div class="gallery-item" data-cat="prints" data-title="Berry Nice Indeed" data-src="artworks/print_8.jpg">
+      <img src="artworks/print_8.jpg" alt="Berry Nice Indeed">
       <div class="item-overlay">
         <span class="item-title">Berry Nice Indeed</span>
         <span class="item-cat">Prints</span>
       </div>
     </div>
-    <div class="gallery-item" data-cat="prints" data-title="Blue Whale" data-src="artworks/blue_whale.jpg">
-      <img src="artworks/blue_whale.jpg" alt="Blue Whale">
+    <div class="gallery-item" data-cat="prints" data-title="Blue Whale" data-src="artworks/print_9.jpg">
+      <img src="artworks/print_9.jpg" alt="Blue Whale">
       <div class="item-overlay">
         <span class="item-title">Blue Whale</span>
         <span class="item-cat">Prints</span>
       </div>
     </div>
-    <div class="gallery-item" data-cat="prints" data-title="Leggo" data-src="artworks/leggo.jpg">
-      <img src="artworks/leggo.jpg" alt="Leggo">
+    <div class="gallery-item" data-cat="prints" data-title="Leggo" data-src="artworks/print_10.jpg">
+      <img src="artworks/print_10.jpg" alt="Leggo">
       <div class="item-overlay">
         <span class="item-title">Leggo</span>
         <span class="item-cat">Prints</span>
@@ -942,80 +983,80 @@
       <div class="cat-label-line"></div>
     </div>
 
-    <div class="gallery-item" data-cat="logos" data-title="Daft Punk" data-src="artworks/logo_daft_punk.jpg">
-      <img src="artworks/logo_daft_punk.jpg" alt="Daft Punk">
+    <div class="gallery-item" data-cat="logos" data-title="Daft Punk" data-src="artworks/logo_1.jpg">
+      <img src="artworks/logo_1.jpg" alt="Daft Punk">
       <div class="item-overlay"><span class="item-title">Daft Punk</span><span class="item-cat">Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="logos" data-title="Donkey Kong" data-src="artworks/logo_donkey_kong.jpg">
-      <img src="artworks/logo_donkey_kong.jpg" alt="Donkey Kong">
+    <div class="gallery-item" data-cat="logos" data-title="Donkey Kong" data-src="artworks/logo_2.jpg">
+      <img src="artworks/logo_2.jpg" alt="Donkey Kong">
       <div class="item-overlay"><span class="item-title">Donkey Kong</span><span class="item-cat">Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="logos" data-title="Kung Fu Budgy" data-src="artworks/logo_kung_fu_budgy.jpg">
-      <img src="artworks/logo_kung_fu_budgy.jpg" alt="Kung Fu Budgy">
+    <div class="gallery-item" data-cat="logos" data-title="Kung Fu Budgy" data-src="artworks/logo_3.jpg">
+      <img src="artworks/logo_3.jpg" alt="Kung Fu Budgy">
       <div class="item-overlay"><span class="item-title">Kung Fu Budgy</span><span class="item-cat">Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="logos" data-title="Mario" data-src="artworks/logo_mario.jpg">
-      <img src="artworks/logo_mario.jpg" alt="Mario">
+    <div class="gallery-item" data-cat="logos" data-title="Mario" data-src="artworks/logo_4.jpg">
+      <img src="artworks/logo_4.jpg" alt="Mario">
       <div class="item-overlay"><span class="item-title">Mario</span><span class="item-cat">Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="logos" data-title="Nerf" data-src="artworks/logo_nerf.jpg">
-      <img src="artworks/logo_nerf.jpg" alt="Nerf">
+    <div class="gallery-item" data-cat="logos" data-title="Nerf" data-src="artworks/logo_5.jpg">
+      <img src="artworks/logo_5.jpg" alt="Nerf">
       <div class="item-overlay"><span class="item-title">Nerf</span><span class="item-cat">Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="logos" data-title="Pac Man" data-src="artworks/logo_pac_man.jpg">
-      <img src="artworks/logo_pac_man.jpg" alt="Pac Man">
+    <div class="gallery-item" data-cat="logos" data-title="Pac Man" data-src="artworks/logo_6.jpg">
+      <img src="artworks/logo_6.jpg" alt="Pac Man">
       <div class="item-overlay"><span class="item-title">Pac Man</span><span class="item-cat">Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="logos" data-title="Pokemon" data-src="artworks/logo_pokemon.jpg">
-      <img src="artworks/logo_pokemon.jpg" alt="Pokemon">
+    <div class="gallery-item" data-cat="logos" data-title="Pokemon" data-src="artworks/logo_7.jpg">
+      <img src="artworks/logo_7.jpg" alt="Pokemon">
       <div class="item-overlay"><span class="item-title">Pokemon</span><span class="item-cat">Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="logos" data-title="Rugrats" data-src="artworks/logo_rugrats.jpg">
-      <img src="artworks/logo_rugrats.jpg" alt="Rugrats">
+    <div class="gallery-item" data-cat="logos" data-title="Rugrats" data-src="artworks/logo_8.jpg">
+      <img src="artworks/logo_8.jpg" alt="Rugrats">
       <div class="item-overlay"><span class="item-title">Rugrats</span><span class="item-cat">Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="logos" data-title="Toy Story" data-src="artworks/logo_toy_story.jpg">
-      <img src="artworks/logo_toy_story.jpg" alt="Toy Story">
+    <div class="gallery-item" data-cat="logos" data-title="Toy Story" data-src="artworks/logo_9.jpg">
+      <img src="artworks/logo_9.jpg" alt="Toy Story">
       <div class="item-overlay"><span class="item-title">Toy Story</span><span class="item-cat">Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="logos" data-title="Violet Crumble" data-src="artworks/logo_violet_crumble.jpg">
-      <img src="artworks/logo_violet_crumble.jpg" alt="Violet Crumble">
+    <div class="gallery-item" data-cat="logos" data-title="Violet Crumble" data-src="artworks/logo_10.jpg">
+      <img src="artworks/logo_10.jpg" alt="Violet Crumble">
       <div class="item-overlay"><span class="item-title">Violet Crumble</span><span class="item-cat">Logos</span></div>
     </div>
 
     <!-- ─ TEAM LOGOS LABEL ─ -->
-    <div class="cat-label-row" data-cat-row="teamlogos">
-      <span class="cat-label-text">Team Logos</span>
+    <div class="cat-label-row" data-cat-row="sportlogos">
+      <span class="cat-label-text">Sports Logos</span>
       <div class="cat-label-line"></div>
     </div>
 
-    <div class="gallery-item" data-cat="teamlogos" data-title="Box Hill" data-src="artworks/logo_team_boxhill.png">
-      <img src="artworks/logo_team_boxhill.png" alt="Box Hill">
-      <div class="item-overlay"><span class="item-title">Box Hill</span><span class="item-cat">Team Logos</span></div>
+    <div class="gallery-item" data-cat="sportlogos" data-title="Box Hill" data-src="artworks/sport_1.png">
+      <img src="artworks/sport_1.png" alt="Box Hill">
+      <div class="item-overlay"><span class="item-title">Box Hill</span><span class="item-cat">Sports Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="teamlogos" data-title="Brooky" data-src="artworks/logo_team_brooky.png">
-      <img src="artworks/logo_team_brooky.png" alt="Brooky">
-      <div class="item-overlay"><span class="item-title">Brooky</span><span class="item-cat">Team Logos</span></div>
+    <div class="gallery-item" data-cat="sportlogos" data-title="Brooky" data-src="artworks/sport_2.png">
+      <img src="artworks/sport_2.png" alt="Brooky">
+      <div class="item-overlay"><span class="item-title">Brooky</span><span class="item-cat">Sports Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="teamlogos" data-title="Cassette" data-src="artworks/logo_team_cassette.png">
-      <img src="artworks/logo_team_cassette.png" alt="Cassette">
-      <div class="item-overlay"><span class="item-title">Cassette</span><span class="item-cat">Team Logos</span></div>
+    <div class="gallery-item" data-cat="sportlogos" data-title="Cassette" data-src="artworks/sport_3.png">
+      <img src="artworks/sport_3.png" alt="Cassette">
+      <div class="item-overlay"><span class="item-title">Cassette</span><span class="item-cat">Sports Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="teamlogos" data-title="Croquet" data-src="artworks/logo_team_croquet.png">
-      <img src="artworks/logo_team_croquet.png" alt="Croquet">
-      <div class="item-overlay"><span class="item-title">Croquet</span><span class="item-cat">Team Logos</span></div>
+    <div class="gallery-item" data-cat="sportlogos" data-title="Croquet" data-src="artworks/sport_4.png">
+      <img src="artworks/sport_4.png" alt="Croquet">
+      <div class="item-overlay"><span class="item-title">Croquet</span><span class="item-cat">Sports Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="teamlogos" data-title="Pickled" data-src="artworks/logo_team_pickled.png">
-      <img src="artworks/logo_team_pickled.png" alt="Pickled">
-      <div class="item-overlay"><span class="item-title">Pickled</span><span class="item-cat">Team Logos</span></div>
+    <div class="gallery-item" data-cat="sportlogos" data-title="Pickled" data-src="artworks/sport_5.png">
+      <img src="artworks/sport_5.png" alt="Pickled">
+      <div class="item-overlay"><span class="item-title">Pickled</span><span class="item-cat">Sports Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="teamlogos" data-title="Run Club" data-src="artworks/logo_team_runclub.png">
-      <img src="artworks/logo_team_runclub.png" alt="Run Club">
-      <div class="item-overlay"><span class="item-title">Run Club</span><span class="item-cat">Team Logos</span></div>
+    <div class="gallery-item" data-cat="sportlogos" data-title="Run Club" data-src="artworks/sport_6.png">
+      <img src="artworks/sport_6.png" alt="Run Club">
+      <div class="item-overlay"><span class="item-title">Run Club</span><span class="item-cat">Sports Logos</span></div>
     </div>
-    <div class="gallery-item" data-cat="teamlogos" data-title="Superbowl" data-src="artworks/logo_team_superbowl.png">
-      <img src="artworks/logo_team_superbowl.png" alt="Superbowl">
-      <div class="item-overlay"><span class="item-title">Superbowl</span><span class="item-cat">Team Logos</span></div>
+    <div class="gallery-item" data-cat="sportlogos" data-title="Superbowl" data-src="artworks/sport_7.png">
+      <img src="artworks/sport_7.png" alt="Superbowl">
+      <div class="item-overlay"><span class="item-title">Superbowl</span><span class="item-cat">Sports Logos</span></div>
     </div>
 
     <!-- ─ APPAREL LABEL ─ -->
@@ -1087,24 +1128,24 @@
       <div class="cat-label-line"></div>
     </div>
 
-    <div class="gallery-item" data-cat="illustrations" data-title="Fast Food" data-src="artworks/Illustrations_fastfood.png">
-      <img src="artworks/Illustrations_fastfood.png" alt="Fast Food">
+    <div class="gallery-item" data-cat="illustrations" data-title="Fast Food" data-src="artworks/illust_1.png">
+      <img src="artworks/illust_1.png" alt="Fast Food">
       <div class="item-overlay"><span class="item-title">Fast Food</span><span class="item-cat">Illustrations</span></div>
     </div>
-    <div class="gallery-item" data-cat="illustrations" data-title="Kombi" data-src="artworks/Illustrations_kombi.png">
-      <img src="artworks/Illustrations_kombi.png" alt="Kombi">
+    <div class="gallery-item" data-cat="illustrations" data-title="Kombi" data-src="artworks/illust_2.png">
+      <img src="artworks/illust_2.png" alt="Kombi">
       <div class="item-overlay"><span class="item-title">Kombi</span><span class="item-cat">Illustrations</span></div>
     </div>
-    <div class="gallery-item" data-cat="illustrations" data-title="Kookaburra" data-src="artworks/Illustrations_kookaburra.png">
-      <img src="artworks/Illustrations_kookaburra.png" alt="Kookaburra">
+    <div class="gallery-item" data-cat="illustrations" data-title="Kookaburra" data-src="artworks/illust_3.png">
+      <img src="artworks/illust_3.png" alt="Kookaburra">
       <div class="item-overlay"><span class="item-title">Kookaburra</span><span class="item-cat">Illustrations</span></div>
     </div>
-    <div class="gallery-item" data-cat="illustrations" data-title="Magpie" data-src="artworks/Illustrations_magpie.png">
-      <img src="artworks/Illustrations_magpie.png" alt="Magpie">
+    <div class="gallery-item" data-cat="illustrations" data-title="Magpie" data-src="artworks/illust_4.png">
+      <img src="artworks/illust_4.png" alt="Magpie">
       <div class="item-overlay"><span class="item-title">Magpie</span><span class="item-cat">Illustrations</span></div>
     </div>
-    <div class="gallery-item" data-cat="illustrations" data-title="Pigeon" data-src="artworks/Illustrations_pigeon.png">
-      <img src="artworks/Illustrations_pigeon.png" alt="Pigeon">
+    <div class="gallery-item" data-cat="illustrations" data-title="Pigeon" data-src="artworks/illust_5.png">
+      <img src="artworks/illust_5.png" alt="Pigeon">
       <div class="item-overlay"><span class="item-title">Pigeon</span><span class="item-cat">Illustrations</span></div>
     </div>
 
@@ -1298,7 +1339,6 @@
       <h2 class="section-heading accent-full">Let's work together</h2>
     </div>
     <p class="contact-availability">Based in Australia.<br>Available for AI &amp; Website Theme Freelance.<br>&amp; Full time wine tastings.</p>
-    <a href="portfolio.html" class="portfolio-link">View Full Portfolio →</a>
   </div>
   <div class="contact-right reveal" style="transition-delay:0.12s">
     <div class="contact-item">
@@ -1506,6 +1546,12 @@
     cycleStat();
     setInterval(cycleStat, 2500);
   }, 1000);
+
+  // Nav transparency on scroll
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
 
 </script>
 </body>
