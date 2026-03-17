@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>In The Wild — Angus Keenan</title>
+  <meta name="description" content="Budgy Smuggler prints in the wild — photoshoot collection by Angus Keenan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Muckley';
+      src: url('fonts/MuckleyBlack.ttf') format('truetype');
+      font-weight: 900;
+    }
+    @font-face {
+      font-family: 'Aptos';
+      src: url('fonts/Aptos.ttf') format('truetype');
+      font-weight: 400;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #000;
+      --white: #fff;
+      --grey: #888;
+      --border: #1a1a1a;
+      --accent: #4F7FFF;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Aptos', sans-serif; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.5rem 3rem;
+      background: rgba(0,0,0,0);
+      backdrop-filter: blur(0px);
+      border-bottom: 1px solid transparent;
+      transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+    }
+    nav.scrolled {
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo img { height: 28px; width: auto; }
+    .nav-back {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-style: italic;
+      font-size: 0.85rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none;
+      color: var(--grey); transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--accent); }
+
+    /* ── HEADER ── */
+    .page-header {
+      padding: 10rem 3rem 5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-tag {
+      font-family: 'Aptos', sans-serif; font-size: 0.72rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--grey); display: block; margin-bottom: 0.5rem;
+    }
+    .page-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800; font-style: italic;
+      font-size: clamp(4rem, 10vw, 10rem);
+      line-height: 0.85; letter-spacing: -0.02em;
+      text-transform: uppercase; color: var(--accent);
+    }
+    .page-subtitle {
+      font-family: 'Muckley', sans-serif; font-weight: 900;
+      font-size: clamp(1.5rem, 3vw, 3rem);
+      color: var(--white); text-transform: uppercase;
+    }
+    .page-count {
+      font-family: 'Aptos', sans-serif; font-size: 0.72rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--grey); margin-top: 1.5rem;
+    }
+
+    /* ── MAGAZINE GRID ── */
+    .magazine-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: 260px;
+      gap: 4px;
+      padding: 4px;
+    }
+
+    .item-sm   { grid-column: span 1; grid-row: span 1; }
+    .item-md   { grid-column: span 2; grid-row: span 1; }
+    .item-lg   { grid-column: span 2; grid-row: span 2; }
+    .item-xl   { grid-column: span 3; grid-row: span 2; }
+    .item-wide { grid-column: span 3; grid-row: span 1; }
+    .item-tall { grid-column: span 2; grid-row: span 3; }
+    .item-hero { grid-column: span 4; grid-row: span 2; }
+
+    .mag-item {
+      position: relative; overflow: hidden;
+      cursor: pointer; background: #0f0f0f;
+    }
+    .mag-item img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      transition: transform 0.6s ease, filter 0.3s;
+      filter: grayscale(15%);
+    }
+    .mag-item:hover img { transform: scale(1.03); filter: grayscale(0%); }
+    .mag-item .overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+      display: flex; flex-direction: column;
+      align-items: flex-start; justify-content: flex-end;
+      padding: 1.2rem 1.4rem;
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .mag-item:hover .overlay { opacity: 1; }
+    .overlay-title {
+      font-family: 'Muckley', sans-serif; font-weight: 900;
+      font-size: 0.85rem; letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .overlay-num {
+      font-family: 'Aptos', sans-serif; font-size: 0.6rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--grey); margin-top: 0.2rem;
+    }
+
+    /* ── LIGHTBOX ── */
+    #lightbox {
+      position: fixed; inset: 0; z-index: 500;
+      background: rgba(0,0,0,0.97);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    #lightbox.open { opacity: 1; pointer-events: all; }
+    .lb-inner { position: relative; max-width: 90vw; max-height: 90vh; }
+    .lb-inner img { max-width: 90vw; max-height: 85vh; object-fit: contain; display: block; }
+    .lb-close {
+      position: absolute; top: -2.5rem; right: 0;
+      background: none; border: none; color: var(--grey);
+      font-family: 'Aptos', sans-serif; font-size: 0.72rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; transition: color 0.2s;
+    }
+    .lb-close:hover { color: var(--white); }
+    .lb-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: none; border: 1px solid #333; color: var(--white);
+      width: 44px; height: 44px; cursor: pointer;
+      font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.2s;
+    }
+    .lb-nav:hover { border-color: var(--accent); color: var(--accent); }
+    #lb-prev { right: calc(100% + 1rem); }
+    #lb-next { left: calc(100% + 1rem); }
+    .lb-counter {
+      position: absolute; bottom: -2.2rem; left: 50%; transform: translateX(-50%);
+      font-family: 'Aptos', sans-serif; font-size: 0.65rem;
+      letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 3rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-text {
+      font-family: 'Aptos', sans-serif; font-size: 0.68rem;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey);
+    }
+  </style>
+</head>
+<body>
+
+<nav id="main-nav">
+  <div class="nav-logo"><img src="images/logo.png" alt="AK"></div>
+  <a href="index.html" class="nav-back">← Back to Portfolio</a>
+</nav>
+
+<div class="page-header">
+  <span class="page-tag">Budgy Smuggler · Print Photography</span>
+  <h1 class="page-title">In The</h1>
+  <p class="page-subtitle">Wild.</p>
+  <p class="page-count" id="shoot-count"></p>
+</div>
+
+<div class="magazine-grid" id="mag-grid">
+
+  <div class="mag-item item-hero" data-src="artworks/shoot_1.jpg" data-title="Shoot 01">
+    <img src="artworks/shoot_1.jpg" alt="Shoot 01">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">01</span></div>
+  </div>
+  <div class="mag-item item-lg" data-src="artworks/shoot_2.jpg" data-title="Shoot 02">
+    <img src="artworks/shoot_2.jpg" alt="Shoot 02">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">02</span></div>
+  </div>
+  <div class="mag-item item-sm" data-src="artworks/shoot_3.jpg" data-title="Shoot 03">
+    <img src="artworks/shoot_3.jpg" alt="Shoot 03">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">03</span></div>
+  </div>
+  <div class="mag-item item-sm" data-src="artworks/shoot_4.jpg" data-title="Shoot 04">
+    <img src="artworks/shoot_4.jpg" alt="Shoot 04">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">04</span></div>
+  </div>
+  <div class="mag-item item-wide" data-src="artworks/shoot_5.jpg" data-title="Shoot 05">
+    <img src="artworks/shoot_5.jpg" alt="Shoot 05">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">05</span></div>
+  </div>
+  <div class="mag-item item-xl" data-src="artworks/shoot_6.jpg" data-title="Shoot 06">
+    <img src="artworks/shoot_6.jpg" alt="Shoot 06">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">06</span></div>
+  </div>
+  <div class="mag-item item-md" data-src="artworks/shoot_7.jpg" data-title="Shoot 07">
+    <img src="artworks/shoot_7.jpg" alt="Shoot 07">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">07</span></div>
+  </div>
+  <div class="mag-item item-sm" data-src="artworks/shoot_8.jpg" data-title="Shoot 08">
+    <img src="artworks/shoot_8.jpg" alt="Shoot 08">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">08</span></div>
+  </div>
+  <div class="mag-item item-sm" data-src="artworks/shoot_9.jpg" data-title="Shoot 09">
+    <img src="artworks/shoot_9.jpg" alt="Shoot 09">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">09</span></div>
+  </div>
+  <div class="mag-item item-tall" data-src="artworks/shoot_10.jpg" data-title="Shoot 10">
+    <img src="artworks/shoot_10.jpg" alt="Shoot 10">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">10</span></div>
+  </div>
+  <div class="mag-item item-lg" data-src="artworks/shoot_11.jpg" data-title="Shoot 11">
+    <img src="artworks/shoot_11.jpg" alt="Shoot 11">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">11</span></div>
+  </div>
+  <div class="mag-item item-wide" data-src="artworks/shoot_12.jpg" data-title="Shoot 12">
+    <img src="artworks/shoot_12.jpg" alt="Shoot 12">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">12</span></div>
+  </div>
+  <div class="mag-item item-sm" data-src="artworks/shoot_13.jpg" data-title="Shoot 13">
+    <img src="artworks/shoot_13.jpg" alt="Shoot 13">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">13</span></div>
+  </div>
+  <div class="mag-item item-sm" data-src="artworks/shoot_14.jpg" data-title="Shoot 14">
+    <img src="artworks/shoot_14.jpg" alt="Shoot 14">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">14</span></div>
+  </div>
+  <div class="mag-item item-hero" data-src="artworks/shoot_15.jpg" data-title="Shoot 15">
+    <img src="artworks/shoot_15.jpg" alt="Shoot 15">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">15</span></div>
+  </div>
+  <div class="mag-item item-md" data-src="artworks/shoot_16.jpg" data-title="Shoot 16">
+    <img src="artworks/shoot_16.jpg" alt="Shoot 16">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">16</span></div>
+  </div>
+  <div class="mag-item item-sm" data-src="artworks/shoot_17.jpg" data-title="Shoot 17">
+    <img src="artworks/shoot_17.jpg" alt="Shoot 17">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">17</span></div>
+  </div>
+  <div class="mag-item item-sm" data-src="artworks/shoot_18.jpg" data-title="Shoot 18">
+    <img src="artworks/shoot_18.jpg" alt="Shoot 18">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">18</span></div>
+  </div>
+  <div class="mag-item item-xl" data-src="artworks/shoot_19.jpg" data-title="Shoot 19">
+    <img src="artworks/shoot_19.jpg" alt="Shoot 19">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">19</span></div>
+  </div>
+  <div class="mag-item item-lg" data-src="artworks/shoot_20.jpg" data-title="Shoot 20">
+    <img src="artworks/shoot_20.jpg" alt="Shoot 20">
+    <div class="overlay"><span class="overlay-title">In The Wild</span><span class="overlay-num">20</span></div>
+  </div>
+
+</div>
+
+<!-- ── LIGHTBOX ── -->
+<div id="lightbox">
+  <button class="lb-nav" id="lb-prev">&#8592;</button>
+  <div class="lb-inner">
+    <button class="lb-close" id="lb-close">Close ✕</button>
+    <img id="lb-img" src="" alt="">
+    <div class="lb-counter" id="lb-counter"></div>
+  </div>
+  <button class="lb-nav" id="lb-next">&#8594;</button>
+</div>
+
+<footer>
+  <span class="footer-text">© 2026 Angus Keenan</span>
+  <a href="index.html" class="footer-text" style="color:#4F7FFF; text-decoration:none;">← Back to site</a>
+</footer>
+
+<script>
+  const items = document.querySelectorAll('.mag-item');
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbCounter = document.getElementById('lb-counter');
+  let current = 0;
+
+  document.getElementById('shoot-count').textContent = `— ${items.length} Shoots`;
+
+  function openLb(i) {
+    current = i;
+    lbImg.src = items[i].dataset.src;
+    lbCounter.textContent = `${i + 1} / ${items.length}`;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLb() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  items.forEach((item, i) => item.addEventListener('click', () => openLb(i)));
+  document.getElementById('lb-close').addEventListener('click', closeLb);
+  document.getElementById('lb-prev').addEventListener('click', () => openLb((current - 1 + items.length) % items.length));
+  document.getElementById('lb-next').addEventListener('click', () => openLb((current + 1) % items.length));
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') openLb((current - 1 + items.length) % items.length);
+    if (e.key === 'ArrowRight') openLb((current + 1) % items.length);
+  });
+
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+</script>
+</body>
+</html>
